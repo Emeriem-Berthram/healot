@@ -1,20 +1,19 @@
-# Use Ubuntu as the base image
+
 FROM ubuntu:22.04
 
-# Update package list
+
 RUN apt-get update
 
-# Install Nginx
+
 RUN apt-get install -y nginx
 
-# Remove default HTML files
 RUN rm -rf /var/www/html/*
 
-# Copy your custom HTML files to the Nginx web directory
+
 COPY ./var/www/html /var/www/html
 
-# Expose port 80
+
 EXPOSE 80
 
-# Start Nginx in the foreground
+
 CMD ["nginx", "-g", "daemon off;"]
