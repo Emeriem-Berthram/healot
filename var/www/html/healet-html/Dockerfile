@@ -10,7 +10,7 @@ RUN apt-get install -y nginx
 RUN rm -rf /var/www/html/*
 
 
-COPY ./var/www/html
+COPY ./var/www/html /var/www/html
 
 
 EXPOSE 80
